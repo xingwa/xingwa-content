@@ -15,7 +15,7 @@ function doSegment(word) {
         //  simple: true,
         stripPunctuation: true
     }))
-    console.log(words)
+    //console.log(words)
     words = Array.from(new Set(words))
     return words
 }
@@ -29,7 +29,7 @@ async function segmentContent(words) {
         const element = arr[index].w
         if (!exits.includes(element)) {
             exits.push(element)
-            if (element.length > 1 && (arr[index].p == 128 || arr[index].p == undefined || arr[index].p === 0 || arr[index].p === 64 || arr[index].p === 16384 || arr[index].p === 1048576 || arr[index].p === 1073741824 || arr[index].p === 4096 || arr[index].p === 32 || arr[index].p === 8)) {
+            if (element.length > 1 && (arr[index].p == 4194304 || arr[index].p == 128 || arr[index].p == undefined || arr[index].p === 0 || arr[index].p === 64 || arr[index].p === 16384 || arr[index].p === 1048576 || arr[index].p === 1073741824 || arr[index].p === 4096 || arr[index].p === 32 || arr[index].p === 8)) {
                 try {
                     let res = await baike.getContent(element)
                     if (res.length >= first) {
